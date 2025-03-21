@@ -8,7 +8,7 @@ Fungsi `handle_connection` menerima kepemilikan TcpStream yang direpresentasi ol
 ![Commit 3](https://github.com/MaulanaSeto/hello/blob/master/images/commit3.png)
 Fungsi `handle_connection` memeriksa baris pertama permintaan HTTP. Jika baris tersebut adalah `GET / HTTP/1.1` yang berisi *root path*, maka fungsi ini mengembalikan respons HTTP berisi berkas `hello.html`. Namun, jika baris tersebut berisi permintaan akses terhadap *path* lain, maka fungsi ini mengembalikan respons HTTP berisi berkas `404.html`.
 ### Commit 4
-Terdapat *path* tambahan `/sleep`. Setelah fungsi `handle_connection` menerima permintaan HTTP dengan *path* `/sleep`, fungsi ini akan diam selama lima detik sebelum mengimir respons HTTP yang berisi berkas `hello.html`.
+Terdapat *path* tambahan `/sleep`. Setelah fungsi `handle_connection` menerima permintaan HTTP dengan *path* `/sleep`, fungsi ini akan diam selama lima detik sebelum mengirim respons HTTP yang berisi berkas `hello.html`.
 ### Commit 5
 Implementasi server diubah menjadi *multithreaded* dengan menggunakan *thread pool*. Dengan pendekatan ini, server dapat menangani banyak koneksi secara bersamaan, sehingga tidak terhambat oleh satu permintaan yang lama. Penggunaan *thread pool* menghindari *overhead* yang muncul akibat pembuatan *thread* baru untuk setiap koneksi, sehingga pemanfaatan sumber daya menjadi lebih efisien dan kinerja server meningkat secara signifikan.
 ### Commit Bonus
